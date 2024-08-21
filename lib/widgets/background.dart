@@ -1,4 +1,4 @@
-import 'package:alpar_counter_app/theme.dart';
+import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 
 class AppGeneralBackground extends StatelessWidget {

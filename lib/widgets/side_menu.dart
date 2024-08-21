@@ -1,6 +1,5 @@
-import 'package:alpar_counter_app/core/route_generator.dart';
-import 'package:alpar_counter_app/models/routes.dart';
-import 'package:alpar_counter_app/theme.dart';
+import 'package:timer/core/route_generator.dart';
+import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -30,19 +29,19 @@ class _SideMenuState extends State<SideMenu> {
                       icon: SvgPicture.asset('assets/svg/aboutus.svg', color: Colors.white),
                       label: 'About us',
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(RoutePath.ABOUT_US));
+                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.ABOUT_US));
                       }),
                   MenuItem(
                       icon: SvgPicture.asset('assets/svg/conversation.svg', color: Colors.white),
                       label: 'Contact',
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(RoutePath.CONTACT));
+                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.CONTACT));
                       }),
                   MenuItem(
                       icon: SvgPicture.asset('assets/svg/t&c.svg', color: Colors.white),
                       label: 'Privacy Policy',
                       onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(RoutePath.TERMS));
+                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.TERMS));
                       })
                 ],
               ),

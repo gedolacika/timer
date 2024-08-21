@@ -1,7 +1,7 @@
 import 'dart:io';
 
-import 'package:alpar_counter_app/core/route_generator.dart';
-import 'package:alpar_counter_app/views/home_screen.dart';
+import 'package:timer/core/route_generator.dart';
+import 'package:timer/views/home_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 

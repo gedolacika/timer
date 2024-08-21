@@ -1,5 +1,5 @@
-import 'package:alpar_counter_app/theme.dart';
-import 'package:alpar_counter_app/utils/string_parser.dart';
+import 'package:timer/theme.dart';
+import 'package:timer/utils/string_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 

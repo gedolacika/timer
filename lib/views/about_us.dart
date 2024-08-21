@@ -1,5 +1,5 @@
-import 'package:alpar_counter_app/theme.dart';
-import 'package:alpar_counter_app/widgets/background.dart';
+import 'package:timer/theme.dart';
+import 'package:timer/widgets/background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:url_launcher/url_launcher.dart';

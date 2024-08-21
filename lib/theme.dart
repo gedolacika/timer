@@ -1,5 +1,6 @@
-import 'package:alpar_counter_app/core/create_material_colors.dart';
+
 import 'package:flutter/material.dart';
+import 'package:timer/core/create_material_colors.dart';
 
 enum CustomColors {
   main_purple, // for background

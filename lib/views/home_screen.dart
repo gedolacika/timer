@@ -1,10 +1,10 @@
 import 'dart:async';
 import 'dart:math';
-import 'package:alpar_counter_app/theme.dart';
-import 'package:alpar_counter_app/utils/string_parser.dart';
-import 'package:alpar_counter_app/widgets/background.dart';
-import 'package:alpar_counter_app/widgets/side_menu.dart';
-import 'package:alpar_counter_app/widgets/slider.dart';
+import 'package:timer/theme.dart';
+import 'package:timer/utils/string_parser.dart';
+import 'package:timer/widgets/background.dart';
+import 'package:timer/widgets/side_menu.dart';
+import 'package:timer/widgets/slider.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
