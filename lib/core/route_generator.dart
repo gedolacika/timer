@@ -1,3 +1,4 @@
+import 'package:alpar_counter_app/models/routes.dart';
 import 'package:alpar_counter_app/views/about_us.dart';
 import 'package:alpar_counter_app/views/contact.dart';
 import 'package:alpar_counter_app/views/error.dart';
@@ -5,12 +6,6 @@ import 'package:alpar_counter_app/views/home_screen.dart';
 import 'package:alpar_counter_app/views/terms.dart';
 import 'package:flutter/material.dart';
 
-enum ROUTES {
-  HOME,
-  ABOUT_US,
-  CONTACT,
-  TERMS,
-}
 
 class RouteGenerator {
   static Route<dynamic> generateRoute(RouteSettings settings) {
@@ -30,15 +25,15 @@ class RouteGenerator {
     }
   }
 
-  static String getRoute(ROUTES route) {
+  static String getRoute(RoutePath route) {
     switch (route) {
-      case ROUTES.HOME:
+      case RoutePath.HOME:
         return '/';
-      case ROUTES.ABOUT_US:
+      case RoutePath.ABOUT_US:
         return '/aboutUs';
-      case ROUTES.CONTACT:
+      case RoutePath.CONTACT:
         return '/contact';
-      case ROUTES.TERMS:
+      case RoutePath.TERMS:
         return '/terms';
     }
   }
