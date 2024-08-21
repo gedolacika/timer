@@ -1,4 +1,5 @@
-import 'package:timer/core/route_generator.dart';
+import 'package:timer/constants/menu.dart';
+import 'package:timer/models/routes.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -10,6 +11,10 @@ class SideMenu extends StatefulWidget {
 }
 
 class _SideMenuState extends State<SideMenu> {
+  void navigate(RoutePath route) {
+    Navigator.pushNamed(context, route.path);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -19,35 +24,16 @@ class _SideMenuState extends State<SideMenu> {
           child: Column(
             children: [
               Column(
-                children: [
-                  MenuItem(
-                      icon: Icon(Icons.close, color: Colors.white),
-                      onPressed: () {
-                        Navigator.pop(context);
-                      }),
-                  MenuItem(
-                      icon: SvgPicture.asset('assets/svg/aboutus.svg', color: Colors.white),
-                      label: 'About us',
-                      onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.ABOUT_US));
-                      }),
-                  MenuItem(
-                      icon: SvgPicture.asset('assets/svg/conversation.svg', color: Colors.white),
-                      label: 'Contact',
-                      onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.CONTACT));
-                      }),
-                  MenuItem(
-                      icon: SvgPicture.asset('assets/svg/t&c.svg', color: Colors.white),
-                      label: 'Privacy Policy',
-                      onPressed: () {
-                        Navigator.pushNamed(context, RouteGenerator.getRoute(ROUTES.TERMS));
-                      })
-                ],
-              ),
+                  children: MenuConstants.main
+                      .map((e) => MenuItem(
+                            icon: SvgPicture.asset(e.icon, color: Colors.white),
+                            label: e.label,
+                            onPressed: () => navigate(e.route),
+                          ))
+                      .toList()),
               Expanded(
                 flex: 1,
-                child: Container(),
+                child: SizedBox(),
               ),
               Container(
                 padding: EdgeInsets.all(16),
@@ -65,8 +51,9 @@ class _SideMenuState extends State<SideMenu> {
                     SizedBox(height: 8),
                     IconButton(
                       padding: EdgeInsets.all(0),
-                      onPressed: () => launch('https://www.facebook.com/Ludicus-Games-109247750850870/'),
-                      icon: SvgPicture.asset('assets/svg/facebook.svg', color: Colors.white),
+                      onPressed: () => launch('https://www.facebook.com/'),
+                      icon: SvgPicture.asset('assets/svg/facebook.svg',
+                          color: Colors.white),
                     ),
                     SizedBox(height: 8),
                     Container(
@@ -99,7 +86,8 @@ class _SideMenuState extends State<SideMenu> {
 }
 
 class MenuItem extends StatelessWidget {
-  MenuItem({Key? key, required this.icon, this.label, required this.onPressed}) : super(key: key);
+  MenuItem({Key? key, required this.icon, this.label, required this.onPressed})
+      : super(key: key);
 
   final Widget icon;
   final String? label;
