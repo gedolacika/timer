@@ -26,7 +26,8 @@ class _SideMenuState extends State<SideMenu> {
               Column(
                   children: MenuConstants.main
                       .map((e) => MenuItem(
-                            icon: SvgPicture.asset(e.icon, color: Colors.white),
+                            icon: SvgPicture.asset(e.icon.path,
+                                color: Colors.white),
                             label: e.label,
                             onPressed: () => navigate(e.route),
                           ))
@@ -49,12 +50,18 @@ class _SideMenuState extends State<SideMenu> {
                       ),
                     ),
                     SizedBox(height: 8),
-                    IconButton(
-                      padding: EdgeInsets.all(0),
-                      onPressed: () => launch('https://www.facebook.com/'),
-                      icon: SvgPicture.asset('assets/svg/facebook.svg',
-                          color: Colors.white),
-                    ),
+                    ...MenuConstants.socials
+                        .map(
+                          (e) => IconButton(
+                            padding: EdgeInsets.all(0),
+                            onPressed: () => launchUrl(
+                              Uri.dataFromString(e.url),
+                            ),
+                            icon: SvgPicture.asset(e.icon.path,
+                                color: Colors.white),
+                          ),
+                        )
+                        .toList(),
                     SizedBox(height: 8),
                     Container(
                       padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
@@ -63,13 +70,13 @@ class _SideMenuState extends State<SideMenu> {
                       width: double.infinity,
                     ),
                     SizedBox(height: 8),
-                    Text('LUDICUS GAMES',
+                    Text(MenuConstants.appName,
                         style: TextStyle(
                           color: CustomTheme.color(CustomColors.grey_text),
                           fontSize: 10,
                         )),
                     SizedBox(height: 8),
-                    Text('TIMER APP v 0.1 Alpha',
+                    Text(MenuConstants.versionAndName,
                         style: TextStyle(
                           color: CustomTheme.color(CustomColors.grey_text),
                           fontSize: 10,

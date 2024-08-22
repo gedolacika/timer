@@ -1,22 +1,33 @@
+import 'package:timer/models/icons.dart';
 import 'package:timer/models/menu.dart';
 import 'package:timer/models/routes.dart';
 
 class MenuConstants {
-  static List<Menu> main = [
-    Menu(
-      icon: 'assets/svg/aboutus.svg',
+  static List<GeneralMenuItem> main = [
+    GeneralMenuItem(
+      icon: IconVariation.aboutUs,
       label: 'About us',
       route: RoutePath.about,
     ),
-    Menu(
-      icon: 'assets/svg/conversation.svg',
+    GeneralMenuItem(
+      icon: IconVariation.conversation,
       label: 'Contact',
       route: RoutePath.contact,
     ),
-    Menu(
-      icon: 'assets/svg/t&c.svg',
+    GeneralMenuItem(
+      icon: IconVariation.tAndC,
       label: 'Privacy Policy',
       route: RoutePath.terms,
     )
   ];
+
+  static List<SocialMenuItem> socials = [
+    SocialMenuItem(
+      'https://facebook.com',
+      icon: IconVariation.facebook,
+    )
+  ];
+
+  static const versionAndName = 'TIMER APP v 0.1 Alpha';
+  static const appName = 'Timer Games';
 }
