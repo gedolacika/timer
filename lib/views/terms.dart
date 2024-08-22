@@ -1,5 +1,8 @@
+import 'package:timer/models/spacing.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:timer/widgets/margin.dart';
+import 'package:timer/widgets/spacer.dart';
 
 class TermsScreen extends StatefulWidget {
   @override
@@ -98,8 +101,8 @@ class _TermsItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.only(top: 8),
+    return Margin(
+      top: Spacing.tiny,
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -112,7 +115,7 @@ class _TermsItem extends StatelessWidget {
                 fontSize: 16,
               ),
             ),
-          if (description != null) SizedBox(height: 8),
+          if (description != null) SpacerWidget.verticalTiny(),
           if (description != null)
             Text(
               description!,

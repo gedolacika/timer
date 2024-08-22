@@ -1,8 +1,11 @@
 import 'package:timer/constants/menu.dart';
 import 'package:timer/models/routes.dart';
+import 'package:timer/models/spacing.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:timer/widgets/margin.dart';
+import 'package:timer/widgets/spacer.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SideMenu extends StatefulWidget {
@@ -36,52 +39,55 @@ class _SideMenuState extends State<SideMenu> {
                 flex: 1,
                 child: SizedBox(),
               ),
-              Container(
-                padding: EdgeInsets.all(16),
-                alignment: Alignment.centerLeft,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Social media',
-                      style: TextStyle(
-                        color: CustomTheme.color(CustomColors.grey_text),
-                        fontSize: 10,
+              Margin.small(
+                child: Align(
+                  alignment: Alignment.centerLeft,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Social media',
+                        style: TextStyle(
+                          color: CustomTheme.color(CustomColors.grey_text),
+                          fontSize: 10,
+                        ),
                       ),
-                    ),
-                    SizedBox(height: 8),
-                    ...MenuConstants.socials
-                        .map(
-                          (e) => IconButton(
-                            padding: EdgeInsets.all(0),
-                            onPressed: () => launchUrl(
-                              Uri.dataFromString(e.url),
+                      SpacerWidget.verticalTiny(),
+                      ...MenuConstants.socials
+                          .map(
+                            (e) => IconButton(
+                              padding: EdgeInsets.all(0),
+                              onPressed: () => launchUrl(
+                                Uri.dataFromString(e.url),
+                              ),
+                              icon: SvgPicture.asset(e.icon.path,
+                                  color: Colors.white),
                             ),
-                            icon: SvgPicture.asset(e.icon.path,
-                                color: Colors.white),
-                          ),
-                        )
-                        .toList(),
-                    SizedBox(height: 8),
-                    Container(
-                      padding: EdgeInsets.fromLTRB(8, 0, 8, 0),
-                      height: 1,
-                      color: CustomTheme.color(CustomColors.grey_text),
-                      width: double.infinity,
-                    ),
-                    SizedBox(height: 8),
-                    Text(MenuConstants.appName,
-                        style: TextStyle(
+                          )
+                          .toList(),
+                      SpacerWidget.verticalTiny(),
+                      Margin.symmetric(
+                        horizontal: Spacing.tiny,
+                        child: Container(
+                          height: 1,
                           color: CustomTheme.color(CustomColors.grey_text),
-                          fontSize: 10,
-                        )),
-                    SizedBox(height: 8),
-                    Text(MenuConstants.versionAndName,
-                        style: TextStyle(
-                          color: CustomTheme.color(CustomColors.grey_text),
-                          fontSize: 10,
-                        ))
-                  ],
+                          width: double.infinity,
+                        ),
+                      ),
+                      SpacerWidget.verticalTiny(),
+                      Text(MenuConstants.appName,
+                          style: TextStyle(
+                            color: CustomTheme.color(CustomColors.grey_text),
+                            fontSize: 10,
+                          )),
+                      SpacerWidget.verticalTiny(),
+                      Text(MenuConstants.versionAndName,
+                          style: TextStyle(
+                            color: CustomTheme.color(CustomColors.grey_text),
+                            fontSize: 10,
+                          ))
+                    ],
+                  ),
                 ),
               )
             ],

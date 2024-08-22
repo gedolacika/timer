@@ -1,13 +1,16 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:timer/models/spacing.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
 import 'package:timer/widgets/background.dart';
+import 'package:timer/widgets/margin.dart';
 import 'package:timer/widgets/side_menu.dart';
 import 'package:timer/widgets/slider.dart';
 import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:timer/widgets/spacer.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -121,127 +124,137 @@ class _HomeScreenState extends State<HomeScreen> {
         key: Key('homeScreenAppGeneralBackground'),
         child: Align(
           alignment: Alignment.center,
-          child: Padding(
-            padding: EdgeInsets.fromLTRB(8, 50, 8, 16),
-            child: Column(
-              children: [
-                Text(
-                  'SET YOUR COUNTDOWN TIMER',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    color: CustomTheme.color(CustomColors.main_yellow),
-                    fontWeight: FontWeight.bold,
-                    fontSize: 18,
+          child: Margin.symmetric(
+            horizontal: Spacing.tiny,
+            vertical: Spacing.small,
+            child: Margin(
+              top: Spacing.large,
+              child: Column(
+                children: [
+                  Text(
+                    'SET YOUR COUNTDOWN TIMER',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      color: CustomTheme.color(CustomColors.main_yellow),
+                      fontWeight: FontWeight.bold,
+                      fontSize: 18,
+                    ),
                   ),
-                ),
-                SizedBox(height: 50),
-                Center(
-                  child: Stack(
-                    children: [
-                      Container(
-                        height: 250,
-                        width: double.infinity,
-                        child: CustomSlider(
-                          maxValue: 61,
-                          value: _timerValue ?? 0,
-                          onChange: _onSliderValueChange,
-                          customInnerWidget: _timerValue != null
-                              ? Center(
-                                  child: Stack(
-                                    alignment: Alignment.center,
-                                    children: [
-                                      Text(
-                                        secondsToSecondsString(_timerValue!),
-                                        style: TextStyle(
-                                          fontSize: 50,
-                                          color: Colors.white,
-                                          fontWeight: FontWeight.bold,
-                                        ),
-                                      ),
-                                      Align(
-                                        alignment: Alignment.center,
-                                        child: Image.asset(
-                                          'assets/png/timer_lines/timer_lines@3x.png',
-                                          width: 205,
-                                          height: 205,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                )
-                              : null,
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                SizedBox(height: 10),
-                if (_timerValueByUser != 0 && _timerValue == null)
-                  IconButton(
-                    iconSize: 69,
-                    onPressed: () async {
-                      //Navigator.popAndPushNamed(context, RouteGenerator.getRoute(ROUTES.HOME));
-                      Navigator.pushReplacement(
-                        context,
-                        PageRouteBuilder(
-                          pageBuilder: (context, animation1, animation2) => HomeScreen(),
-                          transitionDuration: Duration(seconds: 0),
-                        ),
-                      );
-                    },
-                    icon: Stack(
-                      alignment: Alignment.center,
+                  SpacerWidget.verticalLarge(),
+                  Center(
+                    child: Stack(
                       children: [
-                        Image.asset(
-                          'assets/png/replay_background/replay_background@3x.png',
-                          width: 58,
-                          height: 69,
-                        ),
-                        Align(
-                          alignment: Alignment.topCenter,
-                          child: Padding(
-                            padding: EdgeInsets.only(top: 17),
-                            child: SvgPicture.asset(
-                              'assets/svg/replay.svg',
-                              color: Colors.white,
-                              width: 36,
-                              height: 40,
-                            ),
+                        Container(
+                          height: 250,
+                          width: double.infinity,
+                          child: CustomSlider(
+                            maxValue: 61,
+                            value: _timerValue ?? 0,
+                            onChange: _onSliderValueChange,
+                            customInnerWidget: _timerValue != null
+                                ? Center(
+                                    child: Stack(
+                                      alignment: Alignment.center,
+                                      children: [
+                                        Text(
+                                          secondsToSecondsString(_timerValue!),
+                                          style: TextStyle(
+                                            fontSize: 50,
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                        ),
+                                        Align(
+                                          alignment: Alignment.center,
+                                          child: Image.asset(
+                                            'assets/png/timer_lines/timer_lines@3x.png',
+                                            width: 205,
+                                            height: 205,
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  )
+                                : null,
                           ),
-                        )
+                        ),
                       ],
                     ),
                   ),
-                Expanded(flex: 1, child: Container()),
-                Container(
-                  padding: EdgeInsets.fromLTRB(16, 0, 16, 24),
-                  child: SizedBox(
-                    height: 50,
-                    width: double.infinity,
-                    child: TextButton(
-                      child: Text(
-                        _timerValue == null ? 'GO' : 'CANCEL',
-                        style: TextStyle(
-                          color: Colors.black,
-                          fontWeight: FontWeight.bold,
-                        ),
+                  SpacerWidget.verticalTiny(),
+                  if (_timerValueByUser != 0 && _timerValue == null)
+                    IconButton(
+                      iconSize: 69,
+                      onPressed: () async {
+                        //Navigator.popAndPushNamed(context, RouteGenerator.getRoute(ROUTES.HOME));
+                        Navigator.pushReplacement(
+                          context,
+                          PageRouteBuilder(
+                            pageBuilder: (context, animation1, animation2) =>
+                                HomeScreen(),
+                            transitionDuration: Duration(seconds: 0),
+                          ),
+                        );
+                      },
+                      icon: Stack(
+                        alignment: Alignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/png/replay_background/replay_background@3x.png',
+                            width: 58,
+                            height: 69,
+                          ),
+                          Align(
+                            alignment: Alignment.topCenter,
+                            child: Padding(
+                              padding: EdgeInsets.only(top: 17),
+                              child: SvgPicture.asset(
+                                'assets/svg/replay.svg',
+                                color: Colors.white,
+                                width: 36,
+                                height: 40,
+                              ),
+                            ),
+                          )
+                        ],
                       ),
-                      onPressed: _timerValue == null ? onGoTapped : onCancelTapped,
-                      style: ButtonStyle(
-                        backgroundColor: _timerValue == null
-                            ? MaterialStateProperty.all(CustomTheme.color(CustomColors.main_yellow))
-                            : MaterialStateProperty.all(Colors.white),
-                        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                          RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(24.0),
-                            side: BorderSide.none,
+                    ),
+                  Expanded(flex: 1, child: Container()),
+                  Margin(
+                    left: Spacing.small,
+                    right: Spacing.small,
+                    bottom: Spacing.medium,
+                    child: SizedBox(
+                      height: 50,
+                      width: double.infinity,
+                      child: TextButton(
+                        child: Text(
+                          _timerValue == null ? 'GO' : 'CANCEL',
+                          style: TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        onPressed:
+                            _timerValue == null ? onGoTapped : onCancelTapped,
+                        style: ButtonStyle(
+                          backgroundColor: _timerValue == null
+                              ? MaterialStateProperty.all(
+                                  CustomTheme.color(CustomColors.main_yellow))
+                              : MaterialStateProperty.all(Colors.white),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                            RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(24.0),
+                              side: BorderSide.none,
+                            ),
                           ),
                         ),
                       ),
                     ),
-                  ),
-                )
-              ],
+                  )
+                ],
+              ),
             ),
           ),
         ),
