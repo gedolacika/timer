@@ -1,3 +1,5 @@
+import 'package:timer/extensions/build_context.dart';
+import 'package:timer/models/icons.dart';
 import 'package:timer/models/spacing.dart';
 import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
@@ -14,9 +16,6 @@ class ContactScreen extends StatefulWidget {
 }
 
 class _ContactScreenState extends State<ContactScreen> {
-  final _formKey = GlobalKey<FormState>();
-  static final bool _isFormAllowed = false;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -26,7 +25,7 @@ class _ContactScreenState extends State<ContactScreen> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Typo(
-          'Contact',
+          context.translations.contactTitle,
           color: Colors.black,
         ),
         backgroundColor: CustomTheme.color(CustomColors.main_yellow),
@@ -40,7 +39,7 @@ class _ContactScreenState extends State<ContactScreen> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Typo(
-                'Ludicus Games SRL',
+                context.translations.contactCompanyName,
                 variation: TextVariation.headlineMedium,
               ),
               SpacerWidget.verticalSmall(),
@@ -54,12 +53,13 @@ class _ContactScreenState extends State<ContactScreen> {
                     ),
                     SpacerWidget.horizontalSmall(),
                     Typo(
-                      'info@ludicus.ro',
+                      context.translations.contactEmailAddress,
                       variation: TextVariation.bodyLarge,
                     )
                   ],
                 ),
-                onTap: () => launch('mailto:info@ludicus.ro'),
+                onTap: () => launchUrl(Uri.dataFromString(
+                    'mailto:${context.translations.contactCompanyName}')),
               ),
               SizedBox(height: 12),
               GestureDetector(
@@ -72,23 +72,26 @@ class _ContactScreenState extends State<ContactScreen> {
                     ),
                     SpacerWidget.horizontalSmall(),
                     Typo(
-                      'https://www.ludicusgames.ro',
+                      context.translations.contactWebpage,
                       variation: TextVariation.bodyLarge,
                     )
                   ],
                 ),
-                onTap: () => launch('https://www.ludicusgames.ro'),
+                onTap: () => launchUrl(
+                    Uri.dataFromString(context.translations.contactWebpage)),
               ),
               SpacerWidget.verticalLarge(),
               Row(
                 children: [
-                  SvgPicture.asset('assets/svg/location.svg',
-                      color: Colors.white),
+                  SvgPicture.asset(
+                    IconVariation.location.path,
+                    color: Colors.white,
+                  ),
                   SpacerWidget.horizontalSmall(),
                   Container(
                     width: 200,
                     child: Typo(
-                      'Odorheiu Secuiesc, Harghita Str. 1 Decembrie 1918 No.7',
+                      context.translations.contactCompanyLocation,
                       variation: TextVariation.bodyLarge,
                     ),
                   )
@@ -99,14 +102,17 @@ class _ContactScreenState extends State<ContactScreen> {
                   height: 2, width: double.infinity, color: Colors.yellow),
               SpacerWidget.verticalSmall(),
               GestureDetector(
-                onTap: () => launch('tel:+40722435555'),
+                onTap: () => launchUrl(Uri.dataFromString(
+                    'tel:${context.translations.contactPhoneNumber}')),
                 child: Row(
                   children: [
-                    SvgPicture.asset('assets/svg/phone-call.svg',
-                        color: Colors.white),
+                    SvgPicture.asset(
+                      IconVariation.phoneCall.path,
+                      color: Colors.white,
+                    ),
                     SpacerWidget.horizontalSmall(),
                     Typo(
-                      '+40-722-435-555',
+                      context.translations.contactPhoneNumber,
                       variation: TextVariation.bodyLarge,
                     ),
                   ],
@@ -118,117 +124,6 @@ class _ContactScreenState extends State<ContactScreen> {
                   width: double.infinity,
                   color: CustomTheme.color(CustomColors.secondary_yellow)),
               SpacerWidget.verticalSmall(),
-              if (_isFormAllowed)
-                Expanded(
-                  flex: 1,
-                  child: Form(
-                    key: _formKey,
-                    child: Column(
-                      children: <Widget>[
-                        // Add TextFormFields and ElevatedButton here.
-                        SizedBox(
-                          height: 70,
-                          child: TextFormField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: CustomTheme.color(
-                                  CustomColors.secondary_purple),
-                              hintText: 'Your Name',
-                              hintStyle: TextStyle(
-                                color:
-                                    CustomTheme.color(CustomColors.input_hint),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter some text';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        SizedBox(
-                          height: 70,
-                          child: TextFormField(
-                            style: TextStyle(color: Colors.white),
-                            decoration: InputDecoration(
-                              filled: true,
-                              fillColor: CustomTheme.color(
-                                  CustomColors.secondary_purple),
-                              hintText: 'Your Name',
-                              hintStyle: TextStyle(
-                                color:
-                                    CustomTheme.color(CustomColors.input_hint),
-                              ),
-                            ),
-                            validator: (value) {
-                              if (value == null || value.isEmpty) {
-                                return 'Please enter some text';
-                              }
-                              return null;
-                            },
-                          ),
-                        ),
-                        Expanded(
-                          flex: 1,
-                          child: SizedBox(
-                            height: double.infinity,
-                            child: TextFormField(
-                              style: TextStyle(color: Colors.white),
-                              minLines: 90,
-                              maxLines: 100,
-                              decoration: InputDecoration(
-                                filled: true,
-                                fillColor: CustomTheme.color(
-                                    CustomColors.secondary_purple),
-                                hintText: 'Your Name',
-                                hintStyle: TextStyle(
-                                  color: CustomTheme.color(
-                                      CustomColors.input_hint),
-                                ),
-                              ),
-                              validator: (value) {
-                                if (value == null || value.isEmpty) {
-                                  return 'Please enter some text';
-                                }
-                                return null;
-                              },
-                            ),
-                          ),
-                        ),
-                        SpacerWidget.horizontalSmall(),
-                        SizedBox(
-                          width: double.infinity,
-                          height: 50,
-                          child: TextButton(
-                            onPressed: () {
-                              // Validate returns true if the form is valid, or false otherwise.
-                              if (_formKey.currentState!.validate()) {
-                                // If the form is valid, display a snackbar. In the real world,
-                                // you'd often call a server or save the information in a database.
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(content: Typo('Processing Data')));
-                              }
-                            },
-                            style: ButtonStyle(
-                                backgroundColor: MaterialStateProperty.all(
-                                    CustomTheme.color(
-                                        CustomColors.main_yellow)),
-                                shape: MaterialStateProperty.all(
-                                    RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(36.0)))),
-                            child: Typo(
-                              'SUBMIT',
-                              variation: TextVariation.headlineSmall,
-                            ),
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
             ],
           ),
         ),
