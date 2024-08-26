@@ -2,7 +2,8 @@ import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 
 class AppGeneralBackground extends StatelessWidget {
-  const AppGeneralBackground({required Key key, required this.child}) : super(key: key);
+  const AppGeneralBackground({required Key key, required this.child})
+      : super(key: key);
   final Widget child;
 
   @override
@@ -17,7 +18,11 @@ class AppGeneralBackground extends StatelessWidget {
             fit: BoxFit.fitHeight,
             height: double.infinity,
           ),
-          child,
+          SizedBox(
+            width: double.infinity,
+            height: double.infinity,
+            child: child,
+          ),
         ],
       ),
     );

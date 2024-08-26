@@ -17,11 +17,11 @@ class Typo extends StatelessWidget {
     TextTheme theme = Theme.of(context).textTheme;
     TextStyle? style = switch (variation) {
       TextVariation.headlineLarge => theme.headlineLarge,
-      TextVariation.headlineMedium => theme.headlineLarge,
-      TextVariation.headlineSmall => theme.headlineLarge,
-      TextVariation.bodyLarge => theme.headlineLarge,
-      TextVariation.bodyMedium => theme.headlineLarge,
-      TextVariation.bodySmall => theme.headlineLarge,
+      TextVariation.headlineMedium => theme.headlineMedium,
+      TextVariation.headlineSmall => theme.headlineSmall,
+      TextVariation.bodyLarge => theme.bodyLarge,
+      TextVariation.bodyMedium => theme.bodyMedium,
+      TextVariation.bodySmall => theme.bodySmall,
     };
     if (style == null) {
       throw ('Error in Typo widget when looking for general text style. TextStyle is null, please define it in the theme.');
