@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:timer/models/spacing.dart';
+import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
 import 'package:timer/widgets/background.dart';
@@ -11,6 +12,7 @@ import 'package:assets_audio_player/assets_audio_player.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:timer/widgets/spacer.dart';
+import 'package:timer/widgets/typo.dart';
 
 class HomeScreen extends StatefulWidget {
   @override
@@ -94,13 +96,9 @@ class _HomeScreenState extends State<HomeScreen> {
       onChange: _onSliderValueChange,
       customInnerWidget: _timerValue != null
           ? Center(
-              child: Text(
+              child: Typo(
                 secondsToMinutesString(_timerValue!),
-                style: TextStyle(
-                  fontSize: 50,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                variation: TextVariation.headlineLarge,
               ),
             )
           : null,
@@ -117,7 +115,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CustomTheme.color(CustomColors.main_purple),
-        title: Text('LUDICHRONO'),
+        title: Typo('LUDICHRONO'),
       ),
       drawer: SideMenu(),
       body: AppGeneralBackground(
@@ -131,14 +129,10 @@ class _HomeScreenState extends State<HomeScreen> {
               top: Spacing.large,
               child: Column(
                 children: [
-                  Text(
+                  Typo(
                     'SET YOUR COUNTDOWN TIMER',
                     textAlign: TextAlign.center,
-                    style: TextStyle(
-                      color: CustomTheme.color(CustomColors.main_yellow),
-                      fontWeight: FontWeight.bold,
-                      fontSize: 18,
-                    ),
+                    variation: TextVariation.headlineSmall,
                   ),
                   SpacerWidget.verticalLarge(),
                   Center(
@@ -156,13 +150,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                     child: Stack(
                                       alignment: Alignment.center,
                                       children: [
-                                        Text(
+                                        Typo(
                                           secondsToSecondsString(_timerValue!),
-                                          style: TextStyle(
-                                            fontSize: 50,
-                                            color: Colors.white,
-                                            fontWeight: FontWeight.bold,
-                                          ),
+                                          variation:
+                                              TextVariation.headlineLarge,
                                         ),
                                         Align(
                                           alignment: Alignment.center,
@@ -228,13 +219,9 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 50,
                       width: double.infinity,
                       child: TextButton(
-                        child: Text(
-                          _timerValue == null ? 'GO' : 'CANCEL',
-                          style: TextStyle(
-                            color: Colors.black,
-                            fontWeight: FontWeight.bold,
-                          ),
-                        ),
+                        child: Typo(_timerValue == null ? 'GO' : 'CANCEL',
+                            variation: TextVariation.headlineSmall,
+                            color: Colors.black),
                         onPressed:
                             _timerValue == null ? onGoTapped : onCancelTapped,
                         style: ButtonStyle(

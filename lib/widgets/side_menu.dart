@@ -1,11 +1,13 @@
 import 'package:timer/constants/menu.dart';
 import 'package:timer/models/routes.dart';
 import 'package:timer/models/spacing.dart';
+import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:timer/widgets/margin.dart';
 import 'package:timer/widgets/spacer.dart';
+import 'package:timer/widgets/typo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SideMenu extends StatefulWidget {
@@ -45,13 +47,9 @@ class _SideMenuState extends State<SideMenu> {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        'Social media',
-                        style: TextStyle(
-                          color: CustomTheme.color(CustomColors.grey_text),
-                          fontSize: 10,
-                        ),
-                      ),
+                      Typo('Social media',
+                          variation: TextVariation.bodySmall,
+                          color: CustomTheme.color(CustomColors.grey_text)),
                       SpacerWidget.verticalTiny(),
                       ...MenuConstants.socials
                           .map(
@@ -75,17 +73,17 @@ class _SideMenuState extends State<SideMenu> {
                         ),
                       ),
                       SpacerWidget.verticalTiny(),
-                      Text(MenuConstants.appName,
-                          style: TextStyle(
-                            color: CustomTheme.color(CustomColors.grey_text),
-                            fontSize: 10,
-                          )),
+                      Typo(
+                        MenuConstants.appName,
+                        variation: TextVariation.bodySmall,
+                        color: CustomTheme.color(CustomColors.grey_text),
+                      ),
                       SpacerWidget.verticalTiny(),
-                      Text(MenuConstants.versionAndName,
-                          style: TextStyle(
-                            color: CustomTheme.color(CustomColors.grey_text),
-                            fontSize: 10,
-                          ))
+                      Typo(
+                        MenuConstants.versionAndName,
+                        variation: TextVariation.bodySmall,
+                        color: CustomTheme.color(CustomColors.grey_text),
+                      )
                     ],
                   ),
                 ),

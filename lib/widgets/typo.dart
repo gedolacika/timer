@@ -3,11 +3,13 @@ import 'package:timer/models/text_variations.dart';
 
 class Typo extends StatelessWidget {
   const Typo(this.text,
-      {super.key, this.variation = TextVariation.bodyMedium, this.color});
+      {super.key, this.variation = TextVariation.bodyMedium, this.color, this.textAlign});
 
   final String text;
 
   final TextVariation variation;
+
+  final TextAlign? textAlign;
 
   final Color? color;
 
@@ -36,6 +38,7 @@ class Typo extends StatelessWidget {
     return Text(
       text,
       style: style,
+      textAlign: textAlign,
     );
   }
 }

@@ -1,9 +1,11 @@
 import 'package:timer/models/spacing.dart';
+import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:timer/widgets/margin.dart';
 import 'package:timer/widgets/spacer.dart';
+import 'package:timer/widgets/typo.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactScreen extends StatefulWidget {
@@ -23,11 +25,9 @@ class _ContactScreenState extends State<ContactScreen> {
           icon: Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.of(context).pop(),
         ),
-        title: Text(
+        title: Typo(
           'Contact',
-          style: TextStyle(
-            color: Colors.black,
-          ),
+          color: Colors.black,
         ),
         backgroundColor: CustomTheme.color(CustomColors.main_yellow),
       ),
@@ -39,9 +39,9 @@ class _ContactScreenState extends State<ContactScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
+              Typo(
                 'Ludicus Games SRL',
-                style: TextStyle(color: Colors.white, fontSize: 22),
+                variation: TextVariation.headlineMedium,
               ),
               SpacerWidget.verticalSmall(),
               GestureDetector(
@@ -53,9 +53,9 @@ class _ContactScreenState extends State<ContactScreen> {
                       size: 26,
                     ),
                     SpacerWidget.horizontalSmall(),
-                    Text(
+                    Typo(
                       'info@ludicus.ro',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      variation: TextVariation.bodyLarge,
                     )
                   ],
                 ),
@@ -71,9 +71,9 @@ class _ContactScreenState extends State<ContactScreen> {
                       size: 26,
                     ),
                     SpacerWidget.horizontalSmall(),
-                    Text(
+                    Typo(
                       'https://www.ludicusgames.ro',
-                      style: TextStyle(color: Colors.white, fontSize: 16),
+                      variation: TextVariation.bodyLarge,
                     )
                   ],
                 ),
@@ -87,9 +87,9 @@ class _ContactScreenState extends State<ContactScreen> {
                   SpacerWidget.horizontalSmall(),
                   Container(
                     width: 200,
-                    child: Text(
+                    child: Typo(
                       'Odorheiu Secuiesc, Harghita Str. 1 Decembrie 1918 No.7',
-                      style: TextStyle(color: Colors.white),
+                      variation: TextVariation.bodyLarge,
                     ),
                   )
                 ],
@@ -105,9 +105,9 @@ class _ContactScreenState extends State<ContactScreen> {
                     SvgPicture.asset('assets/svg/phone-call.svg',
                         color: Colors.white),
                     SpacerWidget.horizontalSmall(),
-                    Text(
+                    Typo(
                       '+40-722-435-555',
-                      style: TextStyle(color: Colors.white),
+                      variation: TextVariation.bodyLarge,
                     ),
                   ],
                 ),
@@ -208,7 +208,7 @@ class _ContactScreenState extends State<ContactScreen> {
                                 // If the form is valid, display a snackbar. In the real world,
                                 // you'd often call a server or save the information in a database.
                                 ScaffoldMessenger.of(context).showSnackBar(
-                                    SnackBar(content: Text('Processing Data')));
+                                    SnackBar(content: Typo('Processing Data')));
                               }
                             },
                             style: ButtonStyle(
@@ -219,11 +219,9 @@ class _ContactScreenState extends State<ContactScreen> {
                                     RoundedRectangleBorder(
                                         borderRadius:
                                             BorderRadius.circular(36.0)))),
-                            child: Text(
+                            child: Typo(
                               'SUBMIT',
-                              style: TextStyle(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
+                              variation: TextVariation.headlineSmall,
                             ),
                           ),
                         )

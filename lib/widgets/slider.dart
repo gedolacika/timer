@@ -1,7 +1,9 @@
+import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
+import 'package:timer/widgets/typo.dart';
 
 class CustomSlider extends StatefulWidget {
   CustomSlider({
@@ -97,13 +99,9 @@ class _Slider extends StatelessWidget {
           child: Stack(
             alignment: Alignment.center,
             children: [
-              Text(
+              Typo(
                 secondsToSecondsString(value),
-                style: TextStyle(
-                  fontSize: 50,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                ),
+                variation: TextVariation.headlineLarge,
               ),
               Align(
                 alignment: Alignment.center,
