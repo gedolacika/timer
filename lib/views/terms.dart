@@ -1,4 +1,5 @@
 import 'package:timer/constants/terms.dart';
+import 'package:timer/extensions/build_context.dart';
 import 'package:timer/models/spacing.dart';
 import 'package:timer/models/term.dart';
 import 'package:timer/models/text_variations.dart';
@@ -23,21 +24,24 @@ class _TermsScreenState extends State<TermsScreen> {
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Typo(
-          'Privacy Policy',
+          context.translations.termsTitle,
           variation: TextVariation.headlineSmall,
           color: Colors.black,
         ),
         backgroundColor: CustomTheme.color(CustomColors.main_yellow),
       ),
-      body: Container(
-        padding: EdgeInsets.fromLTRB(8, 16, 8, 16),
-        color: Colors.grey[900],
-        child: ListView(
-          children: TermsConstants.content
-              .map((e) => _TermItemWidget(
-                    item: e,
-                  ))
-              .toList(),
+      body: Margin.symmetric(
+        horizontal: Spacing.tiny,
+        vertical: Spacing.small,
+        child: Container(
+          color: Colors.grey[900],
+          child: ListView(
+            children: TermsConstants.content
+                .map((e) => _TermItemWidget(
+                      item: e,
+                    ))
+                .toList(),
+          ),
         ),
       ),
     );

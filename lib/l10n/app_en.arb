@@ -8,5 +8,10 @@
   "contactWebpage": "https://www.facebook.com",
   "contactCompanyLocation": "Odorheiu Secuiesc, Harghita Str. 1 Decembrie 1918 No.7",
   "contactPhoneNumber": "+40712412535",
-  "errorScreenTitle": "Error"
+  "errorScreenTitle": "Error",
+  "homeTitle": "Home",
+  "homeTimerTitle": "SET YOUR COUNTDOWN TIMER",
+  "homeStartTimerLabel": "GO",
+  "homeCancelTimerLabel": "CANCEL",
+  "termsTitle": "Privacy Policy"
 }

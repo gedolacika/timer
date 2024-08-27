@@ -1,5 +1,6 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:timer/extensions/build_context.dart';
 import 'package:timer/models/spacing.dart';
 import 'package:timer/models/text_variations.dart';
 import 'package:timer/theme.dart';
@@ -115,7 +116,7 @@ class _HomeScreenState extends State<HomeScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: CustomTheme.color(CustomColors.main_purple),
-        title: Typo('LUDICHRONO'),
+        title: Typo(context.translations.homeTitle),
       ),
       drawer: SideMenu(),
       body: AppGeneralBackground(
@@ -130,7 +131,7 @@ class _HomeScreenState extends State<HomeScreen> {
               child: Column(
                 children: [
                   Typo(
-                    'SET YOUR COUNTDOWN TIMER',
+                    context.translations.homeTimerTitle,
                     textAlign: TextAlign.center,
                     variation: TextVariation.headlineSmall,
                   ),
@@ -219,7 +220,10 @@ class _HomeScreenState extends State<HomeScreen> {
                       height: 50,
                       width: double.infinity,
                       child: TextButton(
-                        child: Typo(_timerValue == null ? 'GO' : 'CANCEL',
+                        child: Typo(
+                            _timerValue == null
+                                ? context.translations.homeStartTimerLabel
+                                : context.translations.homeCancelTimerLabel,
                             variation: TextVariation.headlineSmall,
                             color: Colors.black),
                         onPressed:
