@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timer/models/text_variations.dart';
+import 'package:timer/constants/enums/text_variations.dart';
 
 class Typo extends StatelessWidget {
   const Typo(this.text,

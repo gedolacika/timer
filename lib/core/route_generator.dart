@@ -1,4 +1,4 @@
-import 'package:timer/models/routes.dart';
+import 'package:timer/constants/enums/routes.dart';
 import 'package:timer/views/about_us.dart';
 import 'package:timer/views/contact.dart';
 import 'package:timer/views/error.dart';

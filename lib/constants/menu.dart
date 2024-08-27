@@ -1,6 +1,6 @@
-import 'package:timer/models/icons.dart';
+import 'package:timer/constants/enums/icons.dart';
 import 'package:timer/models/menu.dart';
-import 'package:timer/models/routes.dart';
+import 'package:timer/constants/enums/routes.dart';
 
 class MenuConstants {
   static List<GeneralMenuItem> main = [

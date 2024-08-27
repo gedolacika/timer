@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:timer/models/spacing.dart';
+import 'package:timer/constants/enums/spacing.dart';
 
 class Margin extends StatelessWidget {
   const Margin({

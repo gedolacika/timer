@@ -1,8 +1,8 @@
 import 'dart:async';
 import 'dart:math';
 import 'package:timer/extensions/build_context.dart';
-import 'package:timer/models/spacing.dart';
-import 'package:timer/models/text_variations.dart';
+import 'package:timer/constants/enums/spacing.dart';
+import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
 import 'package:timer/widgets/background.dart';

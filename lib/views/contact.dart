@@ -1,7 +1,7 @@
 import 'package:timer/extensions/build_context.dart';
-import 'package:timer/models/icons.dart';
-import 'package:timer/models/spacing.dart';
-import 'package:timer/models/text_variations.dart';
+import 'package:timer/constants/enums/icons.dart';
+import 'package:timer/constants/enums/spacing.dart';
+import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';

@@ -1,8 +1,8 @@
 import 'package:timer/constants/terms.dart';
 import 'package:timer/extensions/build_context.dart';
-import 'package:timer/models/spacing.dart';
+import 'package:timer/constants/enums/spacing.dart';
 import 'package:timer/models/term.dart';
-import 'package:timer/models/text_variations.dart';
+import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:timer/widgets/margin.dart';
