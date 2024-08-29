@@ -1,8 +1,10 @@
+import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
+import 'package:timer/widgets/app_image.dart';
 import 'package:timer/widgets/typo.dart';
 
 class CustomSlider extends StatefulWidget {
@@ -105,8 +107,9 @@ class _Slider extends StatelessWidget {
               ),
               Align(
                 alignment: Alignment.center,
-                child: Image.asset(
-                  'assets/png/timer_lines/timer_lines@3x.png',
+                child: AppImage(
+                  image: ImageVariation.timerLines,
+                  quality: ImageQuality.high,
                   width: 205,
                   height: 205,
                 ),

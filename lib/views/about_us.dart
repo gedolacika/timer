@@ -1,8 +1,10 @@
+import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/extensions/build_context.dart';
 import 'package:timer/constants/enums/icons.dart';
 import 'package:timer/constants/enums/spacing.dart';
 import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
+import 'package:timer/widgets/app_image.dart';
 import 'package:timer/widgets/background.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
@@ -17,7 +19,6 @@ class AboutUsScreen extends StatefulWidget {
 }
 
 class _AboutUsScreenState extends State<AboutUsScreen> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -47,7 +48,10 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 SizedBox(
                   height: 130,
                   width: double.infinity,
-                  child: Image.asset('assets/png/ludicus/ludicus@3x.png'),
+                  child: AppImage(
+                    image: ImageVariation.ludicus,
+                    quality: ImageQuality.high,
+                  ),
                 ),
                 SpacerWidget.verticalSmall(),
                 Container(

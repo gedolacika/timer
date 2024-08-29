@@ -1,10 +1,12 @@
 import 'dart:async';
 import 'dart:math';
+import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/extensions/build_context.dart';
 import 'package:timer/constants/enums/spacing.dart';
 import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
 import 'package:timer/utils/string_parser.dart';
+import 'package:timer/widgets/app_image.dart';
 import 'package:timer/widgets/background.dart';
 import 'package:timer/widgets/margin.dart';
 import 'package:timer/widgets/side_menu.dart';
@@ -158,8 +160,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                         ),
                                         Align(
                                           alignment: Alignment.center,
-                                          child: Image.asset(
-                                            'assets/png/timer_lines/timer_lines@3x.png',
+                                          child: AppImage(
+                                            image: ImageVariation.timerLines,
+                                            quality: ImageQuality.high,
                                             width: 205,
                                             height: 205,
                                           ),
@@ -191,8 +194,8 @@ class _HomeScreenState extends State<HomeScreen> {
                       icon: Stack(
                         alignment: Alignment.center,
                         children: [
-                          Image.asset(
-                            'assets/png/replay_background/replay_background@3x.png',
+                          AppImage(
+                            image: ImageVariation.replayBackground,
                             width: 58,
                             height: 69,
                           ),

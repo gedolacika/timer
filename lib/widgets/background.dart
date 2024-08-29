@@ -1,5 +1,7 @@
+import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:timer/widgets/app_image.dart';
 
 class AppGeneralBackground extends StatelessWidget {
   const AppGeneralBackground({required Key key, required this.child})
@@ -13,8 +15,9 @@ class AppGeneralBackground extends StatelessWidget {
       child: Stack(
         alignment: Alignment.center,
         children: [
-          Image.asset(
-            'assets/png/mask_group/mask_group@3x.png',
+          AppImage(
+            image: ImageVariation.maskGroup,
+            quality: ImageQuality.high,
             fit: BoxFit.fitHeight,
             height: double.infinity,
           ),
