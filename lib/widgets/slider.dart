@@ -1,7 +1,7 @@
 import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
-import 'package:timer/utils/string_parser.dart';
+import 'package:timer/extensions/double_extension.dart';
 import 'package:flutter/material.dart';
 import 'package:sleek_circular_slider/sleek_circular_slider.dart';
 import 'package:timer/widgets/app_image.dart';
@@ -102,7 +102,7 @@ class _Slider extends StatelessWidget {
             alignment: Alignment.center,
             children: [
               Typo(
-                secondsToSecondsString(value),
+                value.toSecondsString,
                 variation: TextVariation.headlineLarge,
               ),
               Align(

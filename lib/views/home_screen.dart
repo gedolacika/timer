@@ -5,7 +5,7 @@ import 'package:timer/extensions/build_context.dart';
 import 'package:timer/constants/enums/spacing.dart';
 import 'package:timer/constants/enums/text_variations.dart';
 import 'package:timer/theme.dart';
-import 'package:timer/utils/string_parser.dart';
+import 'package:timer/extensions/double_extension.dart';
 import 'package:timer/widgets/app_image.dart';
 import 'package:timer/widgets/background.dart';
 import 'package:timer/widgets/margin.dart';
@@ -154,7 +154,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                       alignment: Alignment.center,
                                       children: [
                                         Typo(
-                                          secondsToSecondsString(_timerValue!),
+                                          _timerValue!.toSecondsString,
                                           variation:
                                               TextVariation.headlineLarge,
                                         ),

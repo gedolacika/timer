@@ -1,3 +1,4 @@
+import 'package:timer/constants/pages.dart';
 import 'package:timer/constants/enums/image_variation.dart';
 import 'package:timer/extensions/build_context.dart';
 import 'package:timer/constants/enums/icons.dart';
@@ -24,7 +25,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
     return Scaffold(
       appBar: AppBar(
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.black),
+          icon: Icon(Icons.arrow_back, color: AboutUsConstants.arrowColor),
           onPressed: () => Navigator.of(context).pop(),
         ),
         title: Text(
@@ -36,7 +37,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
         backgroundColor: CustomTheme.color(CustomColors.main_yellow),
       ),
       body: AppGeneralBackground(
-        key: Key('aboutUsAppGeneralBackground'),
+        key: AboutUsConstants.backgroundKey,
         child: Margin.symmetric(
           horizontal: Spacing.tiny,
           vertical: Spacing.small,
@@ -46,7 +47,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
               children: [
                 SpacerWidget.verticalSmall(),
                 SizedBox(
-                  height: 130,
+                  height: AboutUsConstants.logoHeight,
                   width: double.infinity,
                   child: AppImage(
                     image: ImageVariation.ludicus,
@@ -55,7 +56,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 ),
                 SpacerWidget.verticalSmall(),
                 Container(
-                    height: 1,
+                    height: AboutUsConstants.separatorHeight,
                     width: double.infinity,
                     color: CustomTheme.color(CustomColors.main_yellow)),
                 SpacerWidget.verticalSmall(),
@@ -81,7 +82,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 IconButton(
                   padding: EdgeInsets.all(0),
                   onPressed: () =>
-                      launchUrl(Uri.dataFromString('https://facebook.com')),
+                      launchUrl(Uri.parse(AboutUsConstants.facebookUrl)),
                   icon: SvgPicture.asset(
                     IconVariation.facebook.path,
                     color: Colors.white,
@@ -89,7 +90,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                 ),
                 SpacerWidget.verticalTiny(),
                 Container(
-                    height: 1,
+                    height: AboutUsConstants.separatorHeight,
                     width: double.infinity,
                     color: CustomTheme.color(CustomColors.main_yellow)),
               ],
