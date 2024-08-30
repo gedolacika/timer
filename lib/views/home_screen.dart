@@ -154,9 +154,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                   height: 69,
                                 ),
                                 Align(
-                                  alignment: Alignment.topCenter,
-                                  child: Padding(
-                                    padding: EdgeInsets.only(top: 17),
+                                  alignment: Alignment.center,
+                                  child: Margin(
+                                    top: Spacing.tiny,
                                     child: SvgPicture.asset(
                                       IconVariation.replay.path,
                                       color: Colors.white,
