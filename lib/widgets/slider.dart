@@ -16,7 +16,7 @@ class CustomSlider extends StatefulWidget {
     this.customInnerWidget,
   }) : super(key: key);
   final double value;
-  final Function onChange;
+  final Function(double) onChange;
   final Widget? customInnerWidget;
   final int maxValue;
 
@@ -60,7 +60,7 @@ class _Slider extends StatelessWidget {
     required this.maxValue,
   }) : super(key: key);
   final double value;
-  final Function onChange;
+  final Function(double) onChange;
   final Widget? customInnerWidget;
   final int maxValue;
 

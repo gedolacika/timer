@@ -19,5 +19,7 @@ class ContactConstants {
   static const titleColor = Colors.black;
   static const iconHeight = 26.0;
   static const iconColor = Colors.white;
-  
+
 }
+
+class HomeScreenConstants {}
