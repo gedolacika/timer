@@ -31,13 +31,13 @@
             <td class="headerValue">lcov.info</td>
             <td></td>
             <td class="headerItem">Lines:</td>
-            <td class="headerCovTableEntryLo">0.0&nbsp;%</td>
+            <td class="headerCovTableEntryHi">100.0&nbsp;%</td>
             <td class="headerCovTableEntry">13</td>
-            <td class="headerCovTableEntry">0</td>
+            <td class="headerCovTableEntry">13</td>
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2024-09-01 12:53:12</td>
+            <td class="headerValue">2024-09-01 13:20:58</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -64,7 +64,7 @@
 <span id="L2"><span class="lineNum">       2</span>              : import 'package:timer/constants/enums/spacing.dart';</span>
 <span id="L3"><span class="lineNum">       3</span>              : </span>
 <span id="L4"><span class="lineNum">       4</span>              : class Margin extends StatelessWidget {</span>
-<span id="L5"><span class="lineNum">       5</span> <span class="tlaUNC tlaBgUNC">           0 :   const Margin({</span></span>
+<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC tlaBgGNC">           1 :   const Margin({</span></span>
 <span id="L6"><span class="lineNum">       6</span>              :     super.key,</span>
 <span id="L7"><span class="lineNum">       7</span>              :     required this.child,</span>
 <span id="L8"><span class="lineNum">       8</span>              :     this.top = Spacing.none,</span>
@@ -77,12 +77,12 @@
 <span id="L15"><span class="lineNum">      15</span>              : </span>
 <span id="L16"><span class="lineNum">      16</span>              :   final Widget child;</span>
 <span id="L17"><span class="lineNum">      17</span>              : </span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaUNC">           0 :   factory Margin.symmetric({</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">           1 :   factory Margin.symmetric({</span></span>
 <span id="L19"><span class="lineNum">      19</span>              :     Spacing horizontal = Spacing.none,</span>
 <span id="L20"><span class="lineNum">      20</span>              :     Spacing vertical = Spacing.none,</span>
 <span id="L21"><span class="lineNum">      21</span>              :     required Widget child,</span>
 <span id="L22"><span class="lineNum">      22</span>              :   }) =&gt;</span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaUNC">           0 :       Margin(</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           1 :       Margin(</span></span>
 <span id="L24"><span class="lineNum">      24</span>              :         left: horizontal,</span>
 <span id="L25"><span class="lineNum">      25</span>              :         right: horizontal,</span>
 <span id="L26"><span class="lineNum">      26</span>              :         top: vertical,</span>
@@ -90,10 +90,10 @@
 <span id="L28"><span class="lineNum">      28</span>              :         child: child,</span>
 <span id="L29"><span class="lineNum">      29</span>              :       );</span>
 <span id="L30"><span class="lineNum">      30</span>              : </span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaUNC">           0 :   factory Margin.small({</span></span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           1 :   factory Margin.small({</span></span>
 <span id="L32"><span class="lineNum">      32</span>              :     required Widget child,</span>
 <span id="L33"><span class="lineNum">      33</span>              :   }) =&gt;</span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaUNC">           0 :       Margin(</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           1 :       Margin(</span></span>
 <span id="L35"><span class="lineNum">      35</span>              :         left: Spacing.small,</span>
 <span id="L36"><span class="lineNum">      36</span>              :         right: Spacing.small,</span>
 <span id="L37"><span class="lineNum">      37</span>              :         top: Spacing.small,</span>
@@ -101,16 +101,16 @@
 <span id="L39"><span class="lineNum">      39</span>              :         child: child,</span>
 <span id="L40"><span class="lineNum">      40</span>              :       );</span>
 <span id="L41"><span class="lineNum">      41</span>              : </span>
-<span id="L42"><span class="lineNum">      42</span> <span class="tlaUNC">           0 :   @override</span></span>
+<span id="L42"><span class="lineNum">      42</span> <span class="tlaGNC">           1 :   @override</span></span>
 <span id="L43"><span class="lineNum">      43</span>              :   Widget build(BuildContext context) {</span>
-<span id="L44"><span class="lineNum">      44</span> <span class="tlaUNC">           0 :     return Padding(</span></span>
-<span id="L45"><span class="lineNum">      45</span> <span class="tlaUNC">           0 :       padding: EdgeInsets.fromLTRB(</span></span>
-<span id="L46"><span class="lineNum">      46</span> <span class="tlaUNC">           0 :         left.value,</span></span>
-<span id="L47"><span class="lineNum">      47</span> <span class="tlaUNC">           0 :         top.value,</span></span>
-<span id="L48"><span class="lineNum">      48</span> <span class="tlaUNC">           0 :         right.value,</span></span>
-<span id="L49"><span class="lineNum">      49</span> <span class="tlaUNC">           0 :         bottom.value,</span></span>
+<span id="L44"><span class="lineNum">      44</span> <span class="tlaGNC">           1 :     return Padding(</span></span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaGNC">           1 :       padding: EdgeInsets.fromLTRB(</span></span>
+<span id="L46"><span class="lineNum">      46</span> <span class="tlaGNC">           2 :         left.value,</span></span>
+<span id="L47"><span class="lineNum">      47</span> <span class="tlaGNC">           2 :         top.value,</span></span>
+<span id="L48"><span class="lineNum">      48</span> <span class="tlaGNC">           2 :         right.value,</span></span>
+<span id="L49"><span class="lineNum">      49</span> <span class="tlaGNC">           2 :         bottom.value,</span></span>
 <span id="L50"><span class="lineNum">      50</span>              :       ),</span>
-<span id="L51"><span class="lineNum">      51</span> <span class="tlaUNC">           0 :       child: child,</span></span>
+<span id="L51"><span class="lineNum">      51</span> <span class="tlaGNC">           1 :       child: child,</span></span>
 <span id="L52"><span class="lineNum">      52</span>              :     );</span>
 <span id="L53"><span class="lineNum">      53</span>              :   }</span>
 <span id="L54"><span class="lineNum">      54</span>              : }</span>
