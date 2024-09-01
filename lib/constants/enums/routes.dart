@@ -12,7 +12,7 @@ enum RoutePath {
   factory RoutePath.fromValue(String value) {
     RoutePath? route = RoutePath.values.where((e) => e.path == value).firstOrNull;
     if(route == null) {
-      throw('Failed to transform $value to RoutePath enum instance.');
+      throw ArgumentError('Failed to transform $value to RoutePath enum instance.');
     }
     return route;
   }
