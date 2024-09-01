@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2024-09-01 13:52:24</td>
+            <td class="headerValue">2024-09-01 13:59:13</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -64,7 +64,7 @@
 <span id="L2"><span class="lineNum">       2</span>              : import 'package:timer/constants/enums/text_variations.dart';</span>
 <span id="L3"><span class="lineNum">       3</span>              : </span>
 <span id="L4"><span class="lineNum">       4</span>              : class Typo extends StatelessWidget {</span>
-<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC tlaBgGNC">           1 :   const Typo(this.text,</span></span>
+<span id="L5"><span class="lineNum">       5</span> <span class="tlaGNC tlaBgGNC">           2 :   const Typo(this.text,</span></span>
 <span id="L6"><span class="lineNum">       6</span>              :       {super.key, this.variation = TextVariation.bodyMedium, this.color, this.textAlign});</span>
 <span id="L7"><span class="lineNum">       7</span>              : </span>
 <span id="L8"><span class="lineNum">       8</span>              :   final String text;</span>
@@ -75,14 +75,14 @@
 <span id="L13"><span class="lineNum">      13</span>              : </span>
 <span id="L14"><span class="lineNum">      14</span>              :   final Color? color;</span>
 <span id="L15"><span class="lineNum">      15</span>              : </span>
-<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">           1 :   TextStyle _style(BuildContext context) {</span></span>
-<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">           2 :     TextTheme theme = Theme.of(context).textTheme;</span></span>
-<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">           1 :     TextStyle? style = switch (variation) {</span></span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">           1 :       TextVariation.headlineLarge =&gt; theme.headlineLarge,</span></span>
-<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">           1 :       TextVariation.headlineMedium =&gt; theme.headlineMedium,</span></span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">           1 :       TextVariation.headlineSmall =&gt; theme.headlineSmall,</span></span>
-<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">           1 :       TextVariation.bodyLarge =&gt; theme.bodyLarge,</span></span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           1 :       TextVariation.bodyMedium =&gt; theme.bodyMedium,</span></span>
+<span id="L16"><span class="lineNum">      16</span> <span class="tlaGNC">           2 :   TextStyle _style(BuildContext context) {</span></span>
+<span id="L17"><span class="lineNum">      17</span> <span class="tlaGNC">           4 :     TextTheme theme = Theme.of(context).textTheme;</span></span>
+<span id="L18"><span class="lineNum">      18</span> <span class="tlaGNC">           2 :     TextStyle? style = switch (variation) {</span></span>
+<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC">           2 :       TextVariation.headlineLarge =&gt; theme.headlineLarge,</span></span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC">           2 :       TextVariation.headlineMedium =&gt; theme.headlineMedium,</span></span>
+<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">           2 :       TextVariation.headlineSmall =&gt; theme.headlineSmall,</span></span>
+<span id="L22"><span class="lineNum">      22</span> <span class="tlaGNC">           2 :       TextVariation.bodyLarge =&gt; theme.bodyLarge,</span></span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           3 :       TextVariation.bodyMedium =&gt; theme.bodyMedium,</span></span>
 <span id="L24"><span class="lineNum">      24</span> <span class="tlaGNC">           2 :       TextVariation.bodySmall =&gt; theme.bodySmall,</span></span>
 <span id="L25"><span class="lineNum">      25</span>              :     };</span>
 <span id="L26"><span class="lineNum">      26</span>              :     if (style == null) {</span>
@@ -91,16 +91,16 @@
 <span id="L29"><span class="lineNum">      29</span>              :     return style;</span>
 <span id="L30"><span class="lineNum">      30</span>              :   }</span>
 <span id="L31"><span class="lineNum">      31</span>              : </span>
-<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">           1 :   @override</span></span>
+<span id="L32"><span class="lineNum">      32</span> <span class="tlaGNC">           2 :   @override</span></span>
 <span id="L33"><span class="lineNum">      33</span>              :   Widget build(BuildContext context) {</span>
-<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           1 :     TextStyle style = _style(context);</span></span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           1 :     if (color != null) {</span></span>
+<span id="L34"><span class="lineNum">      34</span> <span class="tlaGNC">           2 :     TextStyle style = _style(context);</span></span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           2 :     if (color != null) {</span></span>
 <span id="L36"><span class="lineNum">      36</span> <span class="tlaGNC">           2 :       style = style.copyWith(color: color);</span></span>
 <span id="L37"><span class="lineNum">      37</span>              :     }</span>
-<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           1 :     return Text(</span></span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           1 :       text,</span></span>
+<span id="L38"><span class="lineNum">      38</span> <span class="tlaGNC">           2 :     return Text(</span></span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           2 :       text,</span></span>
 <span id="L40"><span class="lineNum">      40</span>              :       style: style,</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           1 :       textAlign: textAlign,</span></span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           2 :       textAlign: textAlign,</span></span>
 <span id="L42"><span class="lineNum">      42</span>              :     );</span>
 <span id="L43"><span class="lineNum">      43</span>              :   }</span>
 <span id="L44"><span class="lineNum">      44</span>              : }</span>
