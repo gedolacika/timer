@@ -79,6 +79,7 @@ flutter:
     - assets/png/mask_group/
     - assets/png/by_ludicus/
     - assets/png/ludicus/
+    - assets/png/aboutus/
     - assets/sounds/
     - assets/svg/
     - assets/logo.png
@@ -113,3 +114,9 @@ flutter:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/custom-fonts/#from-packages
+
+scripts:
+  test:
+    coverage:
+      $description: "Generate the code test coverage report from scratch and open a webpage where you can check in details."
+      $script: "flutter test test/ . --coverage && genhtml coverage/lcov.info -o coverage/html && open coverage/html/index.html"

@@ -1,6 +1,5 @@
 
 import 'package:flutter/material.dart';
-import 'package:timer/utils/create_material_colors.dart';
 
 enum CustomColors {
   main_purple, // for background
@@ -17,7 +16,7 @@ enum CustomColors {
 }
 
 class CustomTheme {
-  static Color? color(CustomColors color) => createMaterialColor(Color(_getColorCode(color)));
+  static Color? color(CustomColors color) => Color(_getColorCode(color));
 
   static int _getColorCode(CustomColors color) {
     switch (color) {
