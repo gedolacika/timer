@@ -1,16 +1,18 @@
-# timer
+# Welcome to my introduction project
 
-A new Flutter project.
+I'm glad that you are here! It means that you are curious about my Flutter skills.
 
-## Getting Started
+In this project I would like to present my Flutter knowledge to better understand my skills, experiences
+and capabilities.
 
-This project is a starting point for a Flutter application.
+This project is a simple timer application that use the sleek_circular_slider pub dependency to show a timer.
+Within this project I'd like to show that I understand the most of Flutter tools, utilities and concepts.
 
-A few resources to get you started if this is your first Flutter project:
+## How does it look?
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Start the project
+
+This project is optimised for Flutter 3.22.3 so I highly recommend to use the pushed SDK version from the repository.
+
+You can install the [fvm](https://fvm.app/documentation/getting-started) and after that you can run easily the project by running the ```fvm flutter run``` command.
