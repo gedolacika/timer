@@ -37,7 +37,7 @@
           </tr>
           <tr>
             <td class="headerItem">Test Date:</td>
-            <td class="headerValue">2024-09-01 13:59:13</td>
+            <td class="headerValue">2024-09-04 13:15:36</td>
             <td></td>
             <td class="headerItem">Functions:</td>
             <td class="headerCovTableEntryHi">-</td>
@@ -62,51 +62,53 @@
 <pre class="source">
 <span id="L1"><span class="lineNum">       1</span>              : </span>
 <span id="L2"><span class="lineNum">       2</span>              : import 'package:flutter/material.dart';</span>
-<span id="L3"><span class="lineNum">       3</span>              : </span>
-<span id="L4"><span class="lineNum">       4</span>              : enum CustomColors {</span>
-<span id="L5"><span class="lineNum">       5</span>              :   main_purple, // for background</span>
-<span id="L6"><span class="lineNum">       6</span>              :   secondary_purple, // timer unselected value</span>
-<span id="L7"><span class="lineNum">       7</span>              :   main_yellow, // buttons</span>
-<span id="L8"><span class="lineNum">       8</span>              :   secondary_yellow, // underline on contact page and gradient to value on timer</span>
-<span id="L9"><span class="lineNum">       9</span>              :   white_text,</span>
-<span id="L10"><span class="lineNum">      10</span>              :   grey_text, // in side menu</span>
-<span id="L11"><span class="lineNum">      11</span>              :   black_text,</span>
-<span id="L12"><span class="lineNum">      12</span>              :   white_icons,</span>
-<span id="L13"><span class="lineNum">      13</span>              :   slider_start,</span>
-<span id="L14"><span class="lineNum">      14</span>              :   slider_end,</span>
-<span id="L15"><span class="lineNum">      15</span>              :   input_hint</span>
-<span id="L16"><span class="lineNum">      16</span>              : }</span>
-<span id="L17"><span class="lineNum">      17</span>              : </span>
-<span id="L18"><span class="lineNum">      18</span>              : class CustomTheme {</span>
-<span id="L19"><span class="lineNum">      19</span> <span class="tlaGNC tlaBgGNC">           9 :   static Color? color(CustomColors color) =&gt; Color(_getColorCode(color));</span></span>
-<span id="L20"><span class="lineNum">      20</span>              : </span>
-<span id="L21"><span class="lineNum">      21</span> <span class="tlaGNC">           3 :   static int _getColorCode(CustomColors color) {</span></span>
-<span id="L22"><span class="lineNum">      22</span>              :     switch (color) {</span>
-<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           3 :       case CustomColors.main_purple:</span></span>
-<span id="L24"><span class="lineNum">      24</span>              :         return 0x160c25;</span>
-<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">           2 :       case CustomColors.secondary_purple:</span></span>
-<span id="L26"><span class="lineNum">      26</span>              :         return 0x211a32;</span>
-<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           2 :       case CustomColors.main_yellow:</span></span>
-<span id="L28"><span class="lineNum">      28</span>              :         return 0xfac234;</span>
-<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           2 :       case CustomColors.secondary_yellow:</span></span>
-<span id="L30"><span class="lineNum">      30</span>              :         return 0x8c6a2f;</span>
-<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           2 :       case CustomColors.white_text:</span></span>
-<span id="L32"><span class="lineNum">      32</span>              :         return 0xffffff;</span>
-<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           2 :       case CustomColors.grey_text:</span></span>
-<span id="L34"><span class="lineNum">      34</span>              :         return 0x4d475b;</span>
-<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           1 :       case CustomColors.black_text:</span></span>
-<span id="L36"><span class="lineNum">      36</span>              :         return 0x000000;</span>
-<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           1 :       case CustomColors.white_icons:</span></span>
-<span id="L38"><span class="lineNum">      38</span>              :         return 0xffffff;</span>
-<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           1 :       case CustomColors.slider_start:</span></span>
-<span id="L40"><span class="lineNum">      40</span>              :         return 0xfabf34;</span>
-<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           1 :       case CustomColors.slider_end:</span></span>
-<span id="L42"><span class="lineNum">      42</span>              :         return 0xf2a245;</span>
-<span id="L43"><span class="lineNum">      43</span> <span class="tlaUNC tlaBgUNC">           0 :       case CustomColors.input_hint:</span></span>
-<span id="L44"><span class="lineNum">      44</span>              :         return 0x96929e;</span>
-<span id="L45"><span class="lineNum">      45</span>              :     }</span>
-<span id="L46"><span class="lineNum">      46</span>              :   }</span>
-<span id="L47"><span class="lineNum">      47</span>              : }</span>
+<span id="L3"><span class="lineNum">       3</span>              : import 'package:timer/utils/material_color.dart';</span>
+<span id="L4"><span class="lineNum">       4</span>              : </span>
+<span id="L5"><span class="lineNum">       5</span>              : enum CustomColors {</span>
+<span id="L6"><span class="lineNum">       6</span>              :   main_purple, // for background</span>
+<span id="L7"><span class="lineNum">       7</span>              :   secondary_purple, // timer unselected value</span>
+<span id="L8"><span class="lineNum">       8</span>              :   main_yellow, // buttons</span>
+<span id="L9"><span class="lineNum">       9</span>              :   secondary_yellow, // underline on contact page and gradient to value on timer</span>
+<span id="L10"><span class="lineNum">      10</span>              :   white_text,</span>
+<span id="L11"><span class="lineNum">      11</span>              :   grey_text, // in side menu</span>
+<span id="L12"><span class="lineNum">      12</span>              :   black_text,</span>
+<span id="L13"><span class="lineNum">      13</span>              :   white_icons,</span>
+<span id="L14"><span class="lineNum">      14</span>              :   slider_start,</span>
+<span id="L15"><span class="lineNum">      15</span>              :   slider_end,</span>
+<span id="L16"><span class="lineNum">      16</span>              :   input_hint</span>
+<span id="L17"><span class="lineNum">      17</span>              : }</span>
+<span id="L18"><span class="lineNum">      18</span>              : </span>
+<span id="L19"><span class="lineNum">      19</span>              : class CustomTheme {</span>
+<span id="L20"><span class="lineNum">      20</span> <span class="tlaGNC tlaBgGNC">          12 :   static Color? color(CustomColors color) =&gt; createMaterialColor(Color(_getColorCode(color)));</span></span>
+<span id="L21"><span class="lineNum">      21</span>              : </span>
+<span id="L22"><span class="lineNum">      22</span>              : </span>
+<span id="L23"><span class="lineNum">      23</span> <span class="tlaGNC">           3 :   static int _getColorCode(CustomColors color) {</span></span>
+<span id="L24"><span class="lineNum">      24</span>              :     switch (color) {</span>
+<span id="L25"><span class="lineNum">      25</span> <span class="tlaGNC">           3 :       case CustomColors.main_purple:</span></span>
+<span id="L26"><span class="lineNum">      26</span>              :         return 0x160c25;</span>
+<span id="L27"><span class="lineNum">      27</span> <span class="tlaGNC">           2 :       case CustomColors.secondary_purple:</span></span>
+<span id="L28"><span class="lineNum">      28</span>              :         return 0x211a32;</span>
+<span id="L29"><span class="lineNum">      29</span> <span class="tlaGNC">           2 :       case CustomColors.main_yellow:</span></span>
+<span id="L30"><span class="lineNum">      30</span>              :         return 0xfac234;</span>
+<span id="L31"><span class="lineNum">      31</span> <span class="tlaGNC">           2 :       case CustomColors.secondary_yellow:</span></span>
+<span id="L32"><span class="lineNum">      32</span>              :         return 0x8c6a2f;</span>
+<span id="L33"><span class="lineNum">      33</span> <span class="tlaGNC">           2 :       case CustomColors.white_text:</span></span>
+<span id="L34"><span class="lineNum">      34</span>              :         return 0xffffff;</span>
+<span id="L35"><span class="lineNum">      35</span> <span class="tlaGNC">           2 :       case CustomColors.grey_text:</span></span>
+<span id="L36"><span class="lineNum">      36</span>              :         return 0x4d475b;</span>
+<span id="L37"><span class="lineNum">      37</span> <span class="tlaGNC">           1 :       case CustomColors.black_text:</span></span>
+<span id="L38"><span class="lineNum">      38</span>              :         return 0x000000;</span>
+<span id="L39"><span class="lineNum">      39</span> <span class="tlaGNC">           1 :       case CustomColors.white_icons:</span></span>
+<span id="L40"><span class="lineNum">      40</span>              :         return 0xffffff;</span>
+<span id="L41"><span class="lineNum">      41</span> <span class="tlaGNC">           1 :       case CustomColors.slider_start:</span></span>
+<span id="L42"><span class="lineNum">      42</span>              :         return 0xfabf34;</span>
+<span id="L43"><span class="lineNum">      43</span> <span class="tlaGNC">           1 :       case CustomColors.slider_end:</span></span>
+<span id="L44"><span class="lineNum">      44</span>              :         return 0xf2a245;</span>
+<span id="L45"><span class="lineNum">      45</span> <span class="tlaUNC tlaBgUNC">           0 :       case CustomColors.input_hint:</span></span>
+<span id="L46"><span class="lineNum">      46</span>              :         return 0x96929e;</span>
+<span id="L47"><span class="lineNum">      47</span>              :     }</span>
+<span id="L48"><span class="lineNum">      48</span>              :   }</span>
+<span id="L49"><span class="lineNum">      49</span>              : }</span>
         </pre>
               </td>
             </tr>

@@ -1,12 +1,11 @@
 enum ImageVariation {
   aboutus('aboutus'),
-  byLudicus('by_ludicus'),
+  logo('logo'),
   conversation('conversation'),
   facebook('facebook'),
   information('information'),
   instagram('instagram'),
   location('location'),
-  ludicus('ludicus'),
   maskGroup('mask_group'),
   phoneCall('phone-call'),
   replay('replay'),

@@ -50,7 +50,7 @@ class _AboutUsScreenState extends State<AboutUsScreen> {
                   height: AboutUsConstants.logoHeight,
                   width: double.infinity,
                   child: AppImage(
-                    image: ImageVariation.ludicus,
+                    image: ImageVariation.logo,
                     quality: ImageQuality.high,
                   ),
                 ),

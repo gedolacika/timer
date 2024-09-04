@@ -1,6 +1,6 @@
 enum IconVariation {
   aboutUs('aboutus'),
-  byLudicus('by_ludicus'),
+  logo('logo'),
   conversation('conversation'),
   facebook('facebook'),
   information('information'),
