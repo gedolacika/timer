@@ -9,7 +9,7 @@ This project is a simple timer application that use the sleek_circular_slider pu
 Within this project I'd like to show that I understand the most of Flutter tools, utilities and concepts.
 
 ## How does it look?
-![](assets/project_presentation/video.mov)
+![](assets/project_presentation/video.gif)
 
 ## Start the project
 
