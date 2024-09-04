@@ -16,3 +16,9 @@ Within this project I'd like to show that I understand the most of Flutter tools
 This project is optimised for Flutter 3.22.3 so I highly recommend to use the pushed SDK version from the repository.
 
 You can install the [fvm](https://fvm.app/documentation/getting-started) and after that you can run easily the project by running the ```fvm flutter run``` command.
+
+## Tests
+I wrote a few tests, based on the coverage report(run the ```rps test coverage``` script in the root and it will generate and open automatically the coverage report as well) the repo reached the 90% of test coverage. 
+Feel free to check my tests.
+
+To activate rps run the following command ```dart pub global activate rps --version 0.8.0```

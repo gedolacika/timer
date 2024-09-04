@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:timer/core/route_generator.dart';
 import 'package:timer/utils/theme.dart';
